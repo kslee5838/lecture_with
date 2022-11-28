@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="KS Lee" />
 
 
-<meta name="date" content="2022-11-28" />
+<meta name="date" content="2022-11-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,8 +166,8 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#자료정리"><i class="fa fa-check"></i><b>1.1</b> 자료정리</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#학생들의-질문"><i class="fa fa-check"></i><b>1.2</b> 학생들의 질문</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
@@ -251,25 +251,22 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">청소년 금융교육</h1>
 <p class="author"><em>KS Lee</em></p>
-<p class="date"><em>2022-11-28</em></p>
+<p class="date"><em>2022-11-29</em></p>
 </div>
 <div id="about" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports; for example, a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<div id="usage" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+<p>김포시 청소년 재단과 <strong>고양시 직업교육센터</strong>에서 중고등 학생을 대상으로 5년간강의한 노트를 정리 했습니다.</p>
+<div id="자료정리" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 자료정리<a href="index.html#자료정리" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>신한은행에서 공개하는 ppt자료를 기본으로 쉬운내용 위주로 수업을 하였고 그러다 보니 청소년 교육을 위한 여려 교육 자료들을 수집하게 되었습니다. 미국의 FRB 웹사이트에서 제공하는 교육자료를 주의 깊게 살펴 보았고 한국은행, 청소년금융재단 등 국내의 여러 관련사이트를 통하여 교육자료를 만들 었습니다.</p>
 </div>
-<div id="render-book" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book<a href="index.html#render-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can render the HTML version of this example book without changing anything:</p>
+<div id="학생들의-질문" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 학생들의 질문<a href="index.html#학생들의-질문" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>수업 중 학생들은 관심이 없는 듯 무심히 있다가도 날카로운 질문 들을 가끔 하였으며 고등학교 2학년 학생 들은 자신의 진로에 대하여 고민 하는 모습을 볼 수 있었습니다:</p>
 <ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
+<li><p>한국은행의 기준금리 <strong>인상</strong> 이 어떻게 시중의 금리를 연관시킬 수 있는지,</p></li>
+<li><p>금융기관 직원들의 실적은 어떻게 배분 되는 지요</p></li>
 </ol>
-<p>Or build the book from the R console:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
 <p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
 </div>
@@ -340,20 +337,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
