@@ -17,25 +17,19 @@ github-repo: rstudio/bookdown-demo
 
 # About
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+김포시 청소년 재단과 **고양시 직업교육센터**에서 중고등 학생을 대상으로 5년간강의한 노트를 정리 했습니다.
 
-## Usage 
+## 자료정리 
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+신한은행에서 공개하는 ppt자료를 기본으로 쉬운내용 위주로 수업을 하였고 그러다 보니 청소년 교육을 위한 여려 교육 자료들을 수집하게 되었습니다. 미국의 FRB 웹사이트에서 제공하는 교육자료를 주의 깊게 살펴 보았고 한국은행, 청소년금융재단 등 국내의 여러 관련사이트를 통하여 교육자료를 만들 었습니다.
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+## 학생들의 질문
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+수업 중 학생들은 관심이 없는 듯 무심히 있다가도 날카로운 질문 들을 가끔 하였으며 고등학교 2학년 학생 들은 자신의 진로에 대하여 고민 하는 모습을 볼 수 있었습니다:
 
-## Render book
+1. 한국은행의 기준금리 **인상** 이 어떻게 시중의 금리를 연관시킬 수 있는지,
 
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
+1. 금융기관 직원들의 실적은 어떻게 배분 되는 지요
 
 ```{r, eval=FALSE}
 bookdown::render_book()
