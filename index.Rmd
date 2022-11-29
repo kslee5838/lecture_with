@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+#cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a minimal example of using the bookdown package to write a book.
   The HTML output format for this example is bookdown::gitbook,
@@ -17,38 +17,17 @@ github-repo: rstudio/bookdown-demo
 
 # About
 
-김포시 청소년 재단과 **고양시 직업교육센터**에서 중고등 학생을 대상으로 5년간강의한 노트를 정리 했습니다.
+**김포진로체험센터**와 **고양시 청소년진로센터 **^[직업인멘토링]에서 중고등 학생을 대상으로 5년간 강의한 노트를 정리 했습니다.
 
 ## 자료정리 
 
-신한은행에서 공개하는 ppt자료를 기본으로 쉬운내용 위주로 수업을 하였고 그러다 보니 청소년 교육을 위한 여려 교육 자료들을 수집하게 되었습니다. 미국의 FRB 웹사이트에서 제공하는 교육자료를 주의 깊게 살펴 보았고 한국은행, 청소년금융재단 등 국내의 여러 관련사이트를 통하여 교육자료를 만들 었습니다.
+신한은행에서 공개하는 PPT자료를 기본으로 쉬운내용 위주로 수업을 하였고 그러다 보니 청소년 교육을 위한 여려 교육 자료들을 수집하게 되었습니다. 미국의 FRB 웹사이트에서 제공하는 교육자료를 주의 깊게 살펴 보았고 한국은행, 청소년금융재단 등 국내의 여러 관련사이트를 통하여 교육자료를 만들 었습니다.
 
 ## 학생들의 질문
 
 수업 중 학생들은 관심이 없는 듯 무심히 있다가도 날카로운 질문 들을 가끔 하였으며 고등학교 2학년 학생 들은 자신의 진로에 대하여 고민 하는 모습을 볼 수 있었습니다:
 
+```
 1. 한국은행의 기준금리 **인상** 이 어떻게 시중의 금리를 연관시킬 수 있는지,
-
-1. 금융기관 직원들의 실적은 어떻게 배분 되는 지요
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+2. 금융기관 직원들의 실적은 어떻게 배분 되는 지요   
 ```
