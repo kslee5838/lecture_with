@@ -1,5 +1,3 @@
-eq:binom
-thm:tri
 about
 자료정리
 학생들의-질문
@@ -18,14 +16,9 @@ bitcoin-is-money
 footnotes-and-citations
 footnotes
 citations
-blocks
-equations
-theorems-and-proofs
-callout-blocks
+화폐와-통화량
+화폐
 sharing-your-book
 publishing
 pages
 metadata-for-sharing
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
-화폐와-통화량
-화폐
