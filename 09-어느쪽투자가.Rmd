@@ -1,0 +1,16 @@
+# 나는 어느 쪽 투자가 일까?
+
+## 적극적 투자자(Active Investor)
+
+- Beat the stock market
+- 전략 : Buy, hold or sell
+- 거래비용(Transaction cost)
+- 펀드매니저, 연구, 예측하고, 매수, 보유, 매도에서 끊임없는 고민
+- 주식가치=시장가격은 같지 않다
+
+## 소극적 투자자(Passive Investor)Breakfast
+
+- 주가는 현재와 미래의 정보를 모두 반영하고 있음
+- 전략 : Buy & hold
+- 주식가치=시장가격 으로 일치한다
+
