@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,46 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -108,16 +71,16 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
-  pdftitle={A Minimal Book Example},
-  pdfauthor={John Doe},
+  pdftitle={청소년 금융교육},
+  pdfauthor={KS Lee},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{A Minimal Book Example}
-\author{John Doe}
-\date{2022-11-26}
+\title{청소년 금융교육}
+\author{KS Lee}
+\date{2023-09-03}
 
 \begin{document}
 \maketitle
@@ -129,159 +92,195 @@
 \hypertarget{about}{%
 \chapter{About}\label{about}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+\textbf{김포진로체험센터}와 \textbf{고양시 청소년진로센터 }\footnote{직업인멘토링}에서 중고등 학생을 대상으로 5년간 강의한 노트를 정리 했습니다.
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+\hypertarget{uxc790uxb8ccuxc815uxb9ac}{%
+\section{자료정리}\label{uxc790uxb8ccuxc815uxb9ac}}
 
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
+신한은행에서 공개하는 PPT자료를 기본으로 쉬운내용 위주로 수업을 하였고 그러다 보니 청소년 교육을 위한 여려 교육 자료들을 수집하게 되었습니다. 미국의 FRB 웹사이트에서 제공하는 교육자료를 주의 깊게 살펴 보았고 한국은행, 청소년금융재단 등 국내의 여러 관련사이트를 통하여 교육자료를 만들 었습니다.
 
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
+\hypertarget{uxd559uxc0dduxb4e4uxc758-uxc9c8uxbb38}{%
+\section{학생들의 질문}\label{uxd559uxc0dduxb4e4uxc758-uxc9c8uxbb38}}
 
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
+수업 중 학생들은 관심이 없는 듯 무심히 있다가도 날카로운 질문 들을 때가 가끔 하였으며 고등학교 2학년 학생 들은 자신의 진로에 대하여 고민 하는 모습을 볼 수 있었습니다:
 
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
+\begin{verbatim}
+1. 한국은행의 기준금리 인상이 어떻게 시중의 금리를 연관시킬 수 있는지,
+2. 금융기관 직원들의 실적은 어떻게 배분 되는 지요   
+\end{verbatim}
 
-You can render the HTML version of this example book without changing anything:
+\hypertarget{uxc740uxd589-uxbca0uxc774uxc9c1}{%
+\chapter{은행 베이직}\label{uxc740uxd589-uxbca0uxc774uxc9c1}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Find the \textbf{Build} pane in the RStudio IDE, and
-\item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
-\end{enumerate}
+\hypertarget{uxc740uxd589uxc5d0-uxd1b5uxc7a5uxc744-uxb9ccuxb4dcuxb294-uxc774uxc720}{%
+\section{은행에 통장을 만드는 이유}\label{uxc740uxd589uxc5d0-uxd1b5uxc7a5uxc744-uxb9ccuxb4dcuxb294-uxc774uxc720}}
 
-Or build the book from the R console:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
-
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
-
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
-
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
-
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
-
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
-
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
-
-\hypertarget{cross}{%
-\chapter{Cross-references}\label{cross}}
-
-Cross-references make it easier for your readers to find and link to elements in your book.
-
-\hypertarget{chapters-and-sub-chapters}{%
-\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}}
-
-There are two steps to cross-reference any heading:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \tightlist
 \item
-  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
+  보통예금 통장은 어떤 건가요?
+\item
+  적금통장
+\end{itemize}
+
+\hypertarget{uxae08uxc735uxae30uxad00uxc774-uxd558uxb294-uxc77c}{%
+\section{금융기관이 하는 일}\label{uxae08uxc735uxae30uxad00uxc774-uxd558uxb294-uxc77c}}
+
+\begin{itemize}
+\tightlist
+\item
+  은행
 
   \begin{itemize}
   \tightlist
   \item
-    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
+    ATM 기를 이용할 수 있다
   \item
-    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
+    체크카드(debit card) 발급
+  \item
+    \textbf{체크카드 분실}의 경우 곧바로 은행에 신고한다. 전화 또는 은행 APP 이용하여 신고가능
+  \item
+    은행은 음식이나 옷 등 재화를 생산하지 않고 자동차대출(Car Loan), 주택대출(Home Mortage), 크레딧카드 서비스를 제공한다
+  \item
+    안전한 곳에 돈을 맡기기 위하여 또는 자동차를 구매하고 집을 장만하고 학자금대출 등을 하기 위하여 은행을 이용한다
+    \\
   \end{itemize}
 \item
-  Next, reference the labeled heading anywhere in the text using \texttt{\textbackslash{}@ref(nice-label)}; for example, please see Chapter @ref(cross).
+  협동조합(Credit Union)
 
   \begin{itemize}
   \tightlist
   \item
-    If you prefer text as the link instead of a numbered reference use: \protect\hyperlink{cross}{any text you want can go here}.
+    협동조합에서 통장을 만들어 예금을 하는 경우 협동조합의 소유자 중 한명이(owner-member) 된다는 것이다
+  \item
+    회사의 형태와 다른 의미
+  \item
+    조합원에게 일반적으로 예금금리는 높고 대출금리는 은행보다 낮을 수 있다
+    \\
   \end{itemize}
-\end{enumerate}
+\item
+  인터넷은행
 
-\hypertarget{captioned-figures-and-tables}{%
-\section{Captioned figures and tables}\label{captioned-figures-and-tables}}
+  \begin{itemize}
+  \tightlist
+  \item
+    인터넷은행은 건물이나 지점을 만들지 않고 영업을 한다
+  \item
+    고정비에 대한 경비절감으로 위에서 언급한 금융기관보다 높은 예금이자, 낮은대출금리, 낮은 수수료를 부과 한다\\
+  \item
+    단점은 금융 서비스를 기대하며 대면으로 상담 할 장소가 없으며 대여금고 를 이용할 수 도 없다
+  \item
+    여러분 들은 어떤 종류의 금융기관이 던지 선택할 수 있으며 단지 그 기관이 인가를 받은 정상적 회사인지 예금자보호제도는 갖춰쳐 있는지 확인이 필요 함
+  \end{itemize}
+\end{itemize}
 
-Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
+\hypertarget{uxd1b5uxc7a5uxc885uxb958}{%
+\section{통장종류}\label{uxd1b5uxc7a5uxc885uxb958}}
 
-See Figure @ref(fig:nice-fig).
+\begin{itemize}
+\tightlist
+\item
+  저축이 목적인 경우
+\item
+  대출이 필요한 경우
+\item
+  가계자금 또는 기업운영용도의 자금이 필요한 경우 통장을 달리하며 이용한다
+\item
+  Savings Account(이자가 붙는 예금) \& Checking Account (수표발행 또는 debit card 이용하는 예금)
+\item
+  거래를 시작 할때 통장의 종류, 예금금리, 수수료 및 서비스종류를 잘 비교해 보고 금융기관을 선택하세요
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{uxd1b5uxc7a5uxac1cuxc124-uxc808uxcc28}{%
+\section{통장개설 절차}\label{uxd1b5uxc7a5uxac1cuxc124-uxc808uxcc28}}
 
-\begin{figure}
+\begin{itemize}
+\tightlist
+\item
+  신분증(주민등록증, 학생증, 여권 등)
+\item
+  이메일주소
+\item
+  때때로 이름이 있는 공과금 청구내역 등
+\end{itemize}
 
-{\centering \includegraphics[width=0.8\linewidth]{_main_files/figure-latex/nice-fig-1} 
+\hypertarget{uxc62cuxbc14uxb978-uxc18cuxbe44uxc2b5uxad00-uxb9ccuxb4e4uxae30}{%
+\section{올바른 소비습관 만들기}\label{uxc62cuxbc14uxb978-uxc18cuxbe44uxc2b5uxad00-uxb9ccuxb4e4uxae30}}
 
-}
+\begin{itemize}
+\tightlist
+\item
+  ATM 에서 출금거래 내역이나 체크카드에서 돈이 인출될 때 통지내역에 주의 해야 함\\
+\item
+  온라인으로도 반드시 확인 한다\\
+\item
+  예금금액과 인출내용에 대해서 주의를 기울인다\\
+\item
+  \textbf{용돈이 어디에 주로 쓰였는지, 기록 하고 확인한다}
+  \\
+  출처 \href{https://research.stlouisfed.org/publications/page1-econ/2020/10/01/banking-basics}{Page One Economics(미국 FRB)}\\
+  기타 \href{http://www.bok.or.kr/portal/main/contents.do?menuNo=201040}{청소년금융교육(한국은행)}
+\end{itemize}
 
-\caption{Here is a nice figure!}(\#fig:nice-fig)
-\end{figure}
+\hypertarget{cross}{%
+\chapter{비트코인논쟁}\label{cross}}
 
-Don't miss Table @ref(tab:nice-tab).
+\hypertarget{bitcoin-uxd654uxd3d0uxc778uxac00-uxd22cuxc790uxc790uxc0b0uxc778uxac00}{%
+\section{Bitcoin 화폐인가 투자자산인가}\label{bitcoin-uxd654uxd3d0uxc778uxac00-uxd22cuxc790uxc790uxc0b0uxc778uxac00}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
-  \FunctionTok{head}\NormalTok{(pressure, }\DecValTok{10}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{booktabs =} \ConstantTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+-Money or Financial Investment
 
-\begin{table}
+\hypertarget{bitcoin-is-money}{%
+\section{Bitcoin is money}\label{bitcoin-is-money}}
 
-\caption{(\#tab:nice-tab)Here is a nice table!}
-\centering
-\begin{tabular}[t]{rr}
-\toprule
-temperature & pressure\\
-\midrule
-0 & 0.0002\\
-20 & 0.0012\\
-40 & 0.0060\\
-60 & 0.0300\\
-80 & 0.0900\\
-\addlinespace
-100 & 0.2700\\
-120 & 0.7500\\
-140 & 1.8500\\
-160 & 4.2000\\
-180 & 8.8000\\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{itemize}
+\tightlist
+\item
+  내용1
+\end{itemize}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+\hypertarget{uxd22cuxc790uxc218uxb2e8uxc774uxb2e4}{%
+\section{투자수단이다}\label{uxd22cuxc790uxc218uxb2e8uxc774uxb2e4}}
+
+\begin{itemize}
+\tightlist
+\item
+  내용2
+\end{itemize}
+
+\hypertarget{uxacb0uxb860}{%
+\section{결론}\label{uxacb0uxb860}}
+
+\begin{itemize}
+\tightlist
+\item
+  화폐로서 또 결제수단으로서 일부 기능을 가지고 있음
+\item
+  다른사람이나 업체에 송금할 수있고 심지어 해외거래도 가능
+\item
+  그러나 안전성(security problem)과 과도한 가격 변동성은 화폐로서 바람직하지 않음
+\item
+  수요와 공급에의해서 화폐가격이 형성되는 것에 비하여 비트코인은 참가자들이 미래 가격을 투기적으로 예측하여 거래 하고,
+\item
+  비트코인 공급은 매우 제한적인 이유로 비트코인에 대한 수요또한 변동하고 결국 가격이 요동치게 된다
+\item
+  이러한 과도한 가격변동 요인은 가치저장 측면에서 결점이라고 말할 수 있다
+\item
+  각국의 정부는 중앙은행에 화폐가지 안정정책을 위임하고 있다
+\item
+  화폐수요가 급변하는 경우 중앙정부는 공급을 충분히 진행하여 가치변동에 대한 제어를 하게 된다
+\item
+  투자자산으로서 비트코인에 대한 관심이 지대해 지며 또한 그로 인한 과도한 손실도 일어나고 있음
+\item
+  2018년 현재 비트코인 구매자들은 재화를 구입하는 화폐의 기능을 기대하기 보다 투자자산으로서 매입을 하고 있다
+\item
+  재넛 엘런재무장관은 ``비트코인은 가치저장수단도 가지고 있지 않고 법정통화로서의 구성요건도 갖추고 있지 않은 단지 매우 위험한 투기적 자산일 뿐이다'' 라고 언급 함
+\item
+  former Federal Reserve Chair Janet Yellen said that Bitcoin is ``not a stable source of store of value, and it doesn't constitute legal tender''; in her judgement, Bitcoin ``is a highly speculative asset.
+\end{itemize}
+
+\hypertarget{uxccaduxc18cuxb144-uxad50uxc721}{%
+\chapter{청소년 교육}\label{uxccaduxc18cuxb144-uxad50uxc721}}
 
 You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
 
@@ -291,91 +290,564 @@ Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (f
 
 Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
 
-\hypertarget{footnotes-and-citations}{%
-\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+\hypertarget{uxd654uxd3d0uxc640-uxd1b5uxd654uxb7c9}{%
+\chapter{화폐와 통화량}\label{uxd654uxd3d0uxc640-uxd1b5uxd654uxb7c9}}
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\hypertarget{uxd654uxd3d0}{%
+\section{화폐}\label{uxd654uxd3d0}}
 
-Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+\begin{itemize}
+\tightlist
+\item
+  화폐의 기능
+  시중에 돈이 지나치게 많으면 가치가 떨어져서 물가가 오르는 인플레이션이 발생 한다, 지나치게 적은 경우에는 경제활동이 위축되어 경기 침체가 발생 한다
+\end{itemize}
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+수요와 공급 원칙에 의해서 돈이 풍부한 경우 금리가 하락하고 그 반대의 경우 금리가 오른 상태가 된다
 
-Reference items in your bibliography file(s) using \texttt{@key}.
+\begin{itemize}
+\tightlist
+\item
+  화폐로 통용되는 것 들
+  물물교환 시절에는 조개가 화페로 쓰이기도 했으며 1960년대까지 우리나라는 쌀이 화폐를 대신 하기도 하였다
+  조개껍질 구슬 무멸, 노예
+  노예는 20세기 초까지 아프리카서부 지역에서 화폐의 기능을 가지고 있었다
+\item
+  공급량이 한정되어 있어서 가치의 안정성을 가지고 있는 금을 금속화폐 라고도 한다
+\item
+  이후 정부가 법으로 화폐의 가치를 강제적으로 부여(Fiat Money)
+\end{itemize}
 
-For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
-Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+\hypertarget{back-to-r-uxad7f}{%
+\section{back to R 굿}\label{back-to-r-uxad7f}}
 
-The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+\begin{itemize}
+\tightlist
+\item
+  우리는 앞에서 중앙은행이 법화제도의 운용을 책임지고 있다는 사실을 학습하였습니다. 또한 중앙은행은 물가안정을 통해 국가의 경제가 안정적으로 성장할 수 있도록 이바지할 의무도 있습니다.\\
+\item
+  이와 같은 측면에서 중앙은행은 통화발행 권한을 이용하여 앞서 학습한 경기변동에 대응하여 물가안정을 도모함으로써 경기안정화를 달성하기 위해 노력합니다.
+\end{itemize}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+이제 중앙은행이 화폐의 공급량인 통화량을 조절함으로써 어떻게 물가를 안정시키고 경기변동에 대응하는지를 알아보겠습니다
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\begin{itemize}
+\tightlist
+\item
+  경제규모에 비해 시중에 돈이 지나치게 많으면 그 가치가 떨어져 물가가 지속적으로 오르는 인플레이션이 발생하고, 반대로 지나치게 적은 경우에는 생산자금이 부족하게 되어 경제활동이 위축되는 경기침체가 발생합니다.\\
+\item
+  따라서 우리나라의 경우 돈의 양을 조절하는 책임을 지고 있는 한국은행은 몇 가지 수단을 사용해서 통화량을 적절하게 조정함으로써 화폐가치의 안정, 즉 물가안정에 힘쓰고 있습니다.
+\end{itemize}
 
-Here is an equation.
+\hypertarget{uxd1b5uxd654uxb7c9uxc870uxc808}{%
+\section{통화량조절}\label{uxd1b5uxd654uxb7c9uxc870uxc808}}
 
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  (\#eq:binom)
-\end{equation}
+\begin{itemize}
+\tightlist
+\item
+  통화량을 조절하는데 있어 중요한 수단으로 활용되는 것에는 공개시장조작정책과 지급준비정책 그리고 대출정책(재할인정책) 등 3가지가 있습니다.\\
+\item
+  공개시장조작정책은 채권시장과 같은 금융시장에서 중앙은행이 금융기관을 상대로 국공채나 통화안정증권 등의 매매를 통해 통화량을 조절하는 정책을 말합니다.\\
+\item
+  중앙은행이 돈을 지불하고 민간금융기관으로부터 국공채를 매입하면 시중의 통화량이 증가하게 됩니다. 그리고 반대로 중앙은행이 돈을 받고 민간금융기관에 국공채를 매각하면 시중의 통화량이 감소하게 됩니다.\\
+\item
+  중앙은행이 법정지급준비율을 높이거나 낮춤으로써 통화량의 규모를 적절한 수준으로 조절하는 정책을 지급준비정책이라고 합니다.\\
+\item
+  그 구체적인 운용내용은 다음과 같습니다. 우리는 앞에서 은행들이 지급준비금을 보유한다는 사실을 알았고 또한 예금액 중 지급준비금으로 보유하는 비율과 예금통화 창출 규모간에는 반비례 관계가 있다는 사실도 학습했습니다.\\
+\item
+  그런데 중앙은행은 시중은행의 예금액 중 지급준비금 보유비율을 법령으로 규정할 수 있으며 이렇게 법령으로 강제된 지급준비금 보유비율을 법정지급준비율 이라고 합니다.\\
+\item
+  만일 중앙은행이 법정지급준비율을 높인다면 예금통화 창출 규모가 감소하여 시중의 통화량은 감소하게 됩니다. 반대로 중앙은행이 법정지급준비율을 낮춘다면 예금통화 창출규모가 증가하여 시중의 통화량은 증가하게 됩니다.
+\end{itemize}
 
-You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation @ref(eq:binom).
+\hypertarget{uxd1b5uxd654uxb7c9}{%
+\section{통화량}\label{uxd1b5uxd654uxb7c9}}
 
-\hypertarget{theorems-and-proofs}{%
-\section{Theorems and proofs}\label{theorems-and-proofs}}
+\begin{itemize}
+\tightlist
+\item
+  대출정책이란 중앙은행이 민간은행에 빌려주는 자금에 대한 금리를 조정하여 통화량을 조절하는 정책을 말합니다.\\
+\item
+  그 구체적인 운용내용은 다음과 같습니다. 개인들이 부족한 자금을 은행에서 빌리듯이 민간 시중은행들도 부족한 자금을 중앙은행에서 빌립니다\\
+\item
+  그리고 중앙은행은 돈을 빌려가는 민간은행에게 부과되는 대출금리를 조정하여 통화량을 조절합니다. 이 때 대출금리는 재할인금리라고도 부릅니다\\
+\item
+  중앙은행이 대출금리를 낮추면 민간은행은 저렴한 비용으로 자금을 이용할 수 있게 됩니다. 따라서 중앙은행에서 더 많은 자금을 빌려갈 것이므로 시중에 통화량이 증가하게 됩니다.\\
+\item
+  반면에 중앙은행이 대출금리를 인상하면 민간 은행은 비싼 비용으로 자금을 이용해야 합니다\\
+\item
+  그러면 민간은행은 중앙은행에게 자금을 빌려가지 않거나 기존에 빌렸던 자금을 상환할 것이므로 시중에 통화량이 감소하게 됩니다
+\end{itemize}
 
-Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem @ref(thm:tri).
+\hypertarget{uxc57duxc18duxc5b4uxc74c}{%
+\section{약속어음}\label{uxc57duxc18duxc5b4uxc74c}}
 
-\begin{theorem}
-\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
-\[a^2 + b^2 = c^2\]
-\end{theorem}
+\begin{itemize}
+\tightlist
+\item
+  강원도중도개발공사(GJC)가 증권사로부터 2,030억원의 자금을 차입함
+\item
+  중간에는 SPC인 GJC의 자회사가 자금을 차입하고 이를 근거로 ABCP를 발행 하였음
+\item
+  만기일인 2022.9.8 자에 동금액을 연장(roll-over)하려 증권사를 방문 하였으나,
+\item
+  ABCP발행 자에 대한 보증을 섰던 지방정부인 강원도가 보증 연장에 대하여 불가 조치를 내림
+\end{itemize}
 
-Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+\hypertarget{uxc8fcuxc2dduxacfc-uxcc44uxad8c}{%
+\chapter{주식과 채권}\label{uxc8fcuxc2dduxacfc-uxcc44uxad8c}}
 
-\hypertarget{callout-blocks}{%
-\section{Callout blocks}\label{callout-blocks}}
+\hypertarget{primary-market}{%
+\section{Primary market}\label{primary-market}}
 
-The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+발행시장이라고 하며 주식이나 채권을 회사로 부터 직접 취득 할 수 있다
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{secondary-market}{%
+\section{Secondary market}\label{secondary-market}}
 
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
+프라이머리 마켓에서 취득한 투자자자산은 2차시장 즉 세컨더리 마켓에서 이를 매각할 수 있고 발행시장에 참여 하지 못했던 사람들은 여기서 이차로 투자자산을 매수 한다
 
-HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+주식
+회사가 사업을 하려면 돈이 필요하다. 친구에게 빌릴수도 있고 지인들을 통하여 돈을 모을 수도 있다
 
-\hypertarget{pages}{%
-\section{404 pages}\label{pages}}
+간편한 방법은 어떤 증서를 발행하고 이를 제3자(투자자)에게 매각한다면 짧은 시간에 필요한 자금을 만들 수 있을 것이다
 
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+사업초기, 즉 회사가 초기에 자본금을 납입하고 회사설립시기나 프로젝트를 발굴하고 이를 추진 하려 할때 주식을 공모한다. 공모란 불특정 다수인에게 주식을 매각 하는 방법이다
 
-\hypertarget{metadata-for-sharing}{%
-\section{Metadata for sharing}\label{metadata-for-sharing}}
+매각된 주식은 코스닥이나 유가증권시장에 등록하고 최초 투자자는 여기서 주식을 매각하여 시세 차익을 얻을 수 있다
 
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+회사는 공모를 통하여 자금을 모았고 투자자는 주식매각을 통하여 자기의 주머니를 두둑히 하게 되었다
 
-This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+initial public offering (IPO). As the name implies, an IPO is a company's first sale of stock to the public.
 
-Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+\hypertarget{uxcc44uxad8c}{%
+\section{채권}\label{uxcc44uxad8c}}
 
-Read more about the features of this output format here:
+회사는 증서를 발행하고 자금을 차입한다. 채권은 타인에 대한 부채증명서인 셈이다. IOU
 
-\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+주식과 달리 차입금에 대하여 이자를 지급하고 언제 돈을 갚겠다고 하는 만기일이 표시 되어 있다
 
-Or use:
+정부에서 도서관을 짓고 항만을 건설하고, 고속도로를 새로 계획할때 채권을 발행하여 필요한 자금을 모을 수 있다
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
-\end{Highlighting}
-\end{Shaded}
+최초로 취득한 투자자는 증권사를 통하여 이를 매각하여 시세 차익을 얻을 수 있다
 
+\hypertarget{uxc99duxc11c-uxc885uxc774-uxc5b4uxc74c-note-paper-commercial-paper}{%
+\section{증서, 종이, 어음 (note, paper, commercial paper)}\label{uxc99duxc11c-uxc885uxc774-uxc5b4uxc74c-note-paper-commercial-paper}}
+
+금액을 표시하고, 언제 까지 지불 하겠다는 만기일을 적고 누가 이 증서를 만들었는지 회사이름을 펴기 한다음에 그 옆에 회사의 도장을 찍 는다. 이 회사가 증서의 발행인이 된다. 발행인의 신용도가 약하여 만기일에 약속한 자금을 잔환하지 못할 위험이 있는 경우 증서 매입자 들은 불 안해 할 수 있다. 이를 보완하기 위하여 보증인인 제3자 회사가 가입 할 수 있으며 이를 보증인이라고 하며 발행인과 함께 즈서에 도장을 찍고 연대하여 돈을 갚을 채무를 진다
+
+\hypertarget{uxc0acuxc5c5uxc744-uxc704uxd55c-uxd544uxc694-uxc790uxae08}{%
+\section{사업을 위한 필요 자금}\label{uxc0acuxc5c5uxc744-uxc704uxd55c-uxd544uxc694-uxc790uxae08}}
+
+회사가 돈이 필요한 경우 몇가지 방법을 생각 해 볼 수 있다
+
+가지고 있는 여유자금을 이용 한다. 물건을 팔아 영업을 하며 생긴 이익금을 말 한다
+친구, 집안친척 또는 가까운 지인에게 부탁 한다
+회사소유권을 일부 넘겨주고 투자자를 유치 한다
+은행에 가서 돈을 차입한다
+모르는 사람들에게 주식을 발행하여 단시간에 대량 매각 하여 자금을 모은다 이때 투자자는 일정부분의 회사지분을 취득 하게 된다
+채권을 발행 한다. 만기 때 되 갚는 다
+
+\hypertarget{uxae08uxb9acuxc778uxc0c1uxacfc-uxc804uxc138uxc0acuxae30}{%
+\chapter{금리인상과 전세사기}\label{uxae08uxb9acuxc778uxc0c1uxacfc-uxc804uxc138uxc0acuxae30}}
+
+\hypertarget{uxc804uxc138}{%
+\section{전세}\label{uxc804uxc138}}
+
+\hypertarget{uxc6d4uxc138}{%
+\section{월세}\label{uxc6d4uxc138}}
+
+\hypertarget{uxb9e4uxb9e4uxac00uxc804uxc138uxac00-uxc2e0uxcd95uxbe4cuxb77cuxc758-uxacbduxc6b0-uxb9e4uxb9e4uxac00-uxd655uxc778-uxc5b4uxb824uxc6c0}{%
+\section{매매가\textless 전세가 (신축빌라의 경우 매매가 확인 어려움)}\label{uxb9e4uxb9e4uxac00uxc804uxc138uxac00-uxc2e0uxcd95uxbe4cuxb77cuxc758-uxacbduxc6b0-uxb9e4uxb9e4uxac00-uxd655uxc778-uxc5b4uxb824uxc6c0}}
+
+학생들에게 전세사기에 대한 애기는 잠깐하고 직업교육에 대한 실무가 필요하다
+
+\hypertarget{uxac2duxd22cuxc790}{%
+\section{갭투자}\label{uxac2duxd22cuxc790}}
+
+\hypertarget{uxc784uxb300uxc778-vs-uxc784uxcc28uxc778}{%
+\section{임대인 vs 임차인}\label{uxc784uxb300uxc778-vs-uxc784uxcc28uxc778}}
+
+\hypertarget{uxbe4cuxb77cuxc655-uxae40uxc528uxbe4cuxb77cuxc640-uxc624uxd53cuxc2a4uxd154-1100uxcc44uxc18cuxc720-uxc870uxc120uxc77cuxbcf4-22.12.27uxae30uxc0ac}{%
+\section{빌라왕 김씨(빌라와 오피스텔 1,100채소유, 조선일보 22.12.27기사)}\label{uxbe4cuxb77cuxc655-uxae40uxc528uxbe4cuxb77cuxc640-uxc624uxd53cuxc2a4uxd154-1100uxcc44uxc18cuxc720-uxc870uxc120uxc77cuxbcf4-22.12.27uxae30uxc0ac}}
+
+\hypertarget{uxc804uxc138uxae08uxd68cuxc218uxbc29uxbc95uxbcf4uxc99duxbcf4uxd5d8-uxc9d1uxc8fcuxc778uxc0acuxb9dduxc2dc-uxacbduxb9e4uxb97c-uxd1b5uxd574-uxd68cuxc218}{%
+\section{전세금회수방법(보증보험-\textgreater 집주인사망시-\textgreater 경매를 통해 회수)}\label{uxc804uxc138uxae08uxd68cuxc218uxbc29uxbc95uxbcf4uxc99duxbcf4uxd5d8-uxc9d1uxc8fcuxc778uxc0acuxb9dduxc2dc-uxacbduxb9e4uxb97c-uxd1b5uxd574-uxd68cuxc218}}
+
+이 기 성
+미국 일리노이주립대학교 재무전공(UIUC)
+국민대학교 경영학 박사(전공 Finance)
+종합금융회사 10년, 시중은행18년, 미소금융재단 근무
+
+수업이 끝나고 나면 ..
+
+\hypertarget{uxc774uxc790uxc728uxc758-uxc758uxbbf8uxb97c-uxc774uxd574uxd558uxace0-uxc608uxae08-uxc801uxae08-uxd380uxb4dcuxb97c-uxad6cuxbd84-uxd560-uxc218-uxc788uxb2e4}{%
+\chapter{이자율의 의미를 이해하고 예금, 적금, 펀드를 구분 할 수 있다}\label{uxc774uxc790uxc728uxc758-uxc758uxbbf8uxb97c-uxc774uxd574uxd558uxace0-uxc608uxae08-uxc801uxae08-uxd380uxb4dcuxb97c-uxad6cuxbd84-uxd560-uxc218-uxc788uxb2e4}}
+
+수업이 끝나고 나면 금융기관의 종류를 공부하여 우리 주위에 있는 금융기관을 구별 할 수 있다. 또한 영상을 통하여 회사생활을 간접경험 한다. 금융관련 직업에 대하여 구체적인 생각을 할 수 안목이 생깁니다. 미국 월스트릿에서 요즘 핫 한 이야기를 둘러 보고 미니 경제학시간에는 인플레이션 원인가 대책 자동화시대에 바람직한 직업선택, 준비방법등에 대한 이해가 향상 됩니다
+
+\hypertarget{uxc9c0uxae08-uxc6d4uxc2a4uxd2b8uxb9bfuxc5d0uxc11cuxb294}{%
+\section{지금 월스트릿에서는\ldots{}}\label{uxc9c0uxae08-uxc6d4uxc2a4uxd2b8uxb9bfuxc5d0uxc11cuxb294}}
+
+일론 머스크의 트위터 인수가 일어 났습니다\\
+일론 머스크의 재산 2,580억불(약 300조원)
+
+70억불(8.2조원) 파이낸싱 계획 발표, 5월 5일
+
+\begin{itemize}
+\tightlist
+\item
+  오라클창업자 래리엘리슨 10억불\\
+\item
+  가상화폐거래소 바이낸스 5억불\\
+\item
+  벤쳐캐피탈 세퀴아 8억불\\
+\item
+  모건스탠리은행 62억달러\\
+\item
+  카타르주권펀드\\
+\item
+  사우디 알왈디 왕자\\
+\item
+  총 18개, 은행포함 투자자 참여
+\end{itemize}
+
+\hypertarget{uxae08uxb9acuxc5d0-uxb300uxd558uxc5ec}{%
+\section{금리에 대하여}\label{uxae08uxb9acuxc5d0-uxb300uxd558uxc5ec}}
+
+금리는 무엇인가요, 이자율과 금리는 같은 내용 일까요?
+
+\begin{itemize}
+\tightlist
+\item
+  백만원을 은행에 예금 했을 때 1년후 1,050,000원을 받을 수 있다\\
+\item
+  매달 83,000원을 1년동안 적금을 하는 경우 투자한금액은 백만원, 이자는?\\
+\item
+  금리가 오르면 예금하는 사람 입장에서는 수익이고 돈을 빌리는 입장에서는 이자비용이 늘어납니다
+\end{itemize}
+
+중앙은행(한국)은행은 이자율을 조정하여 통화정책을 수행합니다. 경기가 좋을 때 즉 지금 처럼 TV에서 인플레를 염려 할 때는 금리를 올립니다
+
+\begin{itemize}
+\tightlist
+\item
+  5월26일 오전 9시 기준금리인상 뉴스, 1.5\%-\textgreater1.75\%
+\end{itemize}
+
+\hypertarget{uxae08uxc735uxae30uxad00uxc758-uxc885uxb958}{%
+\section{금융기관의 종류}\label{uxae08uxc735uxae30uxad00uxc758-uxc885uxb958}}
+
+제1금융권이 있습니다(은행)
+
+\begin{itemize}
+\tightlist
+\item
+  한국은행법에 의해서 운영중인 한국은행\\
+\item
+  특수은행법 설립된 산업은행, 한국수출입은행, 기업은행, 농협은행 등\\
+\item
+  일반 시중은행은 신한은행, KB, 하나은행, 지방은행인 대구 은행\\
+\item
+  외국은행 국내지점
+\end{itemize}
+
+그 외 금융기관(비은행, 제2금융권)
+
+\begin{itemize}
+\tightlist
+\item
+  상호저축은행, 새마을금고, 신용협동조합, 또 보험회사, 증권회사 리스회사 등도 바로 비은행금융기관, 즉 제2금융권에 속한다
+\end{itemize}
+
+그러면 우리가 주변에서 접할 수 있는 금융기관에는 어떤 것들이 있는지 알아보도록 하겠습니다. 금융기관은 취급하는 금융서비스의 성격에 따라 크게 은행과 비은행금융기관으로 구분됩니다.
+
+\begin{itemize}
+\tightlist
+\item
+  은행은 예금과 대출업무를 주로 취급하는 금융기관인데, 은행법에 의해 설립된 일반은행과 각각의 개별법에 의한 특수은행으로 대별됩니다.\\
+\item
+  비은행금융기관은 은행을 제외한 금융기관을 통칭하여 부르는 말로서, 은행법에 의한 적용을 받지 않으면서도 일반은행과 유사한 금융상품을 취급할 뿐만 아니라 일반은행이 취급하지 않는 다양한 금융상품을 다루는 금융기관을 말합니다.
+\end{itemize}
+
+그리고 비은행금융기관에는 보험회사, 증권회사, 종합금융회사, 자산운용회사, 상호저축은행, 신용협동기구 등이 있는데 여기서는 이들 가운데서 상대적으로 여러분에게 익숙한 금융상품을 취급하는 보험회사와 증권회사에 대해 알아보겠습니다.
+
+\begin{itemize}
+\tightlist
+\item
+  보험회사는 다수의 보험계약자를 상대로 보험료를 받아 이 자금을 대출, 유가증권, 부동산 등에 운용해서 보험계약자의 질병, 노후, 사망, 사고 시 보험금을 지급하는 업무를 합니다. 보험회사에는 생명보험회사, 손해보험회사 등이 있습니다.\\
+\item
+  증권회사는 자본시장에서 채권과 주식 등 유가증권의 발행을 주선하고 발행된 유가증권의 매매를 중개하는 업무 등을 주로 수행합니다
+\end{itemize}
+
+\hypertarget{uxae08uxc735uxc0acuxbb34uxc6d0uxc740uxd589uxc6d0uxc774-uxd558uxb294-uxc77c}{%
+\section{금융사무원(은행원)이 하는 일}\label{uxae08uxc735uxc0acuxbb34uxc6d0uxc740uxd589uxc6d0uxc774-uxd558uxb294-uxc77c}}
+
+은행원들은 한 곳에서만 근무하지 않고,
+2-3년마다 이동해요!
+
+영업점 : 고객과 만나며 상담하고, 상품을 판매해요!
+본부부서 : 영업점이 잘 운영되도록 돕는 일을 해요!
+
+\begin{itemize}
+\item
+  영업점
+\item
+  본부부서
+\item
+  주주명부
+\end{itemize}
+
+\hypertarget{uxbd80-uxb85d-addendum}{%
+\section{부 록 addendum}\label{uxbd80-uxb85d-addendum}}
+
+\begin{itemize}
+\tightlist
+\item
+  직업으로서의 장점\\
+\item
+  금융기관이 필요로 하는 인재상\\
+\item
+  준비과정
+\end{itemize}
+
+\hypertarget{glossary}{%
+\section{Glossary}\label{glossary}}
+
+\begin{itemize}
+\tightlist
+\item
+  펀드\\
+\item
+  최저임금\\
+\item
+  채권자(債權者) vs 채무자\\
+\item
+  투자가\\
+\item
+  주식\\
+\item
+  채권(債券,Bond)\\
+\item
+  벤처캐피탈회사
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{C:/Users/Kslee5838/Pictures/stock_pic.png}
+\caption{주권형태}
+\end{figure}
+
+\hypertarget{welcome}{%
+\section{Welcome}\label{welcome}}
+
+\includegraphics[width=8in]{C:/Users/Kslee5838/Pictures/stock_pic}
+
+\includegraphics[width=8in]{C:/Users/Kslee5838/Pictures/stock_pic}
+
+\hypertarget{uxb098uxb294-uxc5b4uxb290-uxcabd-uxd22cuxc790uxac00-uxc77cuxae4c}{%
+\chapter{나는 어느 쪽 투자가 일까?}\label{uxb098uxb294-uxc5b4uxb290-uxcabd-uxd22cuxc790uxac00-uxc77cuxae4c}}
+
+\hypertarget{uxc801uxadf9uxc801-uxd22cuxc790uxc790active-investor}{%
+\section{적극적 투자자(Active Investor)}\label{uxc801uxadf9uxc801-uxd22cuxc790uxc790active-investor}}
+
+\begin{itemize}
+\tightlist
+\item
+  Beat the stock market
+\item
+  전략 : Buy, hold or sell
+\item
+  거래비용(Transaction cost)
+\item
+  펀드매니저, 연구, 예측하고, 매수, 보유, 매도에서 끊임없는 고민
+\item
+  주식가치=시장가격은 같지 않다
+\end{itemize}
+
+\hypertarget{uxc18cuxadf9uxc801-uxd22cuxc790uxc790passive-investorbreakfast}{%
+\section{소극적 투자자(Passive Investor)Breakfast}\label{uxc18cuxadf9uxc801-uxd22cuxc790uxc790passive-investorbreakfast}}
+
+\begin{itemize}
+\tightlist
+\item
+  주가는 현재와 미래의 정보를 모두 반영하고 있음
+\item
+  전략 : Buy \& hold
+\item
+  주식가치=시장가격 으로 일치한다
+\end{itemize}
+
+\hypertarget{automation-and-the-minimum-wage}{%
+\chapter{Automation and the Minimum Wage}\label{automation-and-the-minimum-wage}}
+
+1938년 최저임금 도입, 프랭클린루즈벨트 대통령
+당시 25센트, 궁핍을끝내기 위해 소수에게 적용
+현재 주정부의 최저임금정책 7.25달러, 2009년 마지막 개정
+명목(nominal) 최저임금은 계속 상승했지만 실질 구매력은 상승못함
+
+\hypertarget{uxad50uxacfcuxc11cuxc801-uxc811uxadfcuxbc95}{%
+\section{교과서적 접근법}\label{uxad50uxacfcuxc11cuxc801-uxc811uxadfcuxbc95}}
+
+노동시장은 공급측면(노동자)와 수요측면(그들을 원하는 회사) 으로 구성 됨
+공급사이드 주어진 임금하에서 일을 하려는 의사가 있음
+수요사이드 주어진 임금하에서 노동자를 고용하려는 의사가 있음
+균형, 일정한 가격에서 We 생성, 일하려는 근로자의 숫자와 회사가 고용하려하는 숫자가 일치함
+정부에서 최저임금을 강제하는 경우, 균형가격 위에서 형성 최저임금은 price floor 역할을 하게 됨
+높은 임금을 노리고 덜숙련된 노동시장에 진입하여 공급이 늘어난다. 수요자는 노동자에게 지급되는 임금이 부담스러워서 채용을 줄이게 된다
+일단 높은 최저임금에서 채용된 사람들은 이익(beneficiaries)을 누리게 된다. 반면 그래프에서 보 듯이 일정 부분은 과다 공급으로 나타나게 된다
+이들은 현재 일자리 보다 많은 공급으로 실업으로 나타나게 된다
+
+\hypertarget{miss-nuancesuxbbf8uxbb18uxd55c-uxcc28uxc774}{%
+\section{miss nuances(미묘한 차이)}\label{miss-nuancesuxbbf8uxbb18uxd55c-uxcc28uxc774}}
+
+최저임금을 도입하더라도 lay off 로 이어지진 않았다. Davis Card \& Alan Kruger, 1990년대 뉴저지를 예로 들었음. 패스트푸드업계
+누가 이익을 보았나?
+1.1백만명이 혜택을 보았음 . 이는 시간 임금자의 1.5\%로 미미한 수준
+45\%는 25살이하 젊은이, 20\%는 틴에이지. 가계의 주수입원은 아니지만 일을 통해서 경험을 쌓는다
+
+\hypertarget{trade-off}{%
+\section{Trade off}\label{trade-off}}
+
+찬성론자
+
+\begin{itemize}
+\tightlist
+\item
+  저소득 임금자에게 식량, 월세 등 필요한 생활비를 충당하며 삶의 질을 높인다
+\item
+  예를 들어 2025년 \$25로 최저임금이 되는 경우 17백만명이 혜택을 누리고 빈곤층이 90만명 줄어 들게 된다
+\item
+  또한 근로자들의 사기를 진작하고 고용자의 제반비용(turn over \& hiring/training cost)를 줄인다
+\end{itemize}
+
+반대론자
+
+\begin{itemize}
+\tightlist
+\item
+  15달러 최저임금은 저숙련 일자리를 줄여서 거기에서 일하는 사람들이 타격을 받게 된다
+\item
+  그래서 1.4백만명이 일자리를 잃게 된다. 이는 0.9\%이다
+\item
+  경제학 적으로 근로자의 임금을 초과하는 이익(revenue)가 있을 때 일자리는 존재 할 수 있고 비로서 채용이 생긴다
+\item
+  최저임금을 도입하는 경우 수익(revenue)이 노동비용을 따라가지 못 할 수 있다
+\end{itemize}
+
+간단히 말해서 높은 임금을 주고 동수의 근로자를 유지는 불가능 하게 된다
+결국 저숙련노동자들의 실업으로 이어지게 된다
+
+\hypertarget{eitc-uxc0dduxb7b5}{%
+\section{EITC (생략)}\label{eitc-uxc0dduxb7b5}}
+
+\hypertarget{automation-and-the-minimum-wage-1}{%
+\section{Automation and the Minimum wage}\label{automation-and-the-minimum-wage-1}}
+
+자동화는 기구(apparatus), 공정, 어떤 기계로 인간의 노동을 대체할 수 있는 수단을 말한다
+새로운 것이 아니며 산업화시대 이후 꾸준히 영향을 끼치고 있다
+로봇과 AI는 지금시대의 자동화로 생각 할 수 있다. 공상과학 속의 드로이드도 있지만 간단한 알고리즘을 이용한 기구도 있다
+
+예을 들어 집안의 온도를 조절하는 온도계도 로봇의 일종 일수 있다. 반복적인 일을 행하며 사람이 작동하는 것이 필요 없는 기계다
+Physical Capital과 달리 로봇은 프로그램되어서 사람의 간섭없이 무한 반복이 가능 해진다
+
+하는 일을 자동화 시켜보자, 우리 일은 여러가지 스텝으로 분리 할 수 있다. 반복적일 일 수록 자동화가 쉽다(susceptible to automation)
+
+우리가 하는 일을 자동화시켜보자.
+
+\begin{itemize}
+\tightlist
+\item
+  일은 몇가지 구분 된 동작으로 이루 어져 있다
+\item
+  사람이 할수 도 있고 기계(physical capital)를 이용하여 완료 되기도 한다
+\item
+  정형화 되 있고 반복적 일은 좀더 자동화가 쉬울 수 있다
+\item
+  기술이 발전하면서 사람과 자동화된 기계가 하는 일은 좀더 복잡하게 상호작용하며 업무를 마감한다
+  자동차 조립라인을 생각해보자
+\item
+  자동차산업 초기인 1900년대에는 작업장에 공구를 든 노동자들이 모든 과정을 담당 했다
+\item
+  그러나 시간이 지나면서 웰딩이나, 페인팅은 지금 자동화된 기계가 담당 하고있다
+  물론 좀더 복잡한 기술이 필요한 곳은 아직도 사람에 의해서 마무리 되고 있기 도 하다
+\end{itemize}
+
+보완하고 대체한다
+- 자본비용 : 기술이 발전하며 많은 부분에서 응용될 때 자본비용은 하락 하는 경향이 있다
+- 노동비용 : 저숙련 노동자들의 임금은 당시의 노동시장환경이나, 정부의 정책, 또는 최저임금 때문에 높게 책정되는 경우가 있고 이는 다른 생산요소로 대체되는 경향이 있다
+
+\hypertarget{uxc790uxb3d9uxd654uxb294-uxb2e4uxc74cuxc758-uxacbduxd5a5uxc774-uxc788uxb2e4}{%
+\section{자동화는 다음의 경향이 있다}\label{uxc790uxb3d9uxd654uxb294-uxb2e4uxc74cuxc758-uxacbduxd5a5uxc774-uxc788uxb2e4}}
+
+경제학적으로 보면 기계투입 단위당 비용이 노동투입 단위당 비용보다 저렴한 경우
+노동자를 기계로 대체하려 한다
+
+\begin{itemize}
+\tightlist
+\item
+  marginal cost of producing goods with capital \textless{} marginal cost of producing goods with labor
+\end{itemize}
+
+최저임금상승은 회사가 새로운기술을 도입하여 기존의 노동자를 해고시키려는 유인을 제시한다
+
+\begin{itemize}
+\tightlist
+\item
+  즉 높은 임금은 노동비용을 상승시키고 전반적인 업무에 부담이 되는 경우 자동화로 변화되는 경우가 강하다
+\item
+  최저임금 직종은 대부분 노동집약적 이며, 비숙련 일로 구성(low-skill tasks) 되어있다
+\item
+  예를 들어 수퍼마켓의 셀프체크 레인이나 패스트푸드점의 디지털 키오스크 도입을 볼수 있다
+\item
+  상승된 최저임금은 비숙련 노동자들의 고용을 줄이고 이는 대부분 노령 노동자, 여성 그외 사회적 약자의 채용을 감소 시키게 된다
+\end{itemize}
+
+\hypertarget{uxbbf8uxb798uxb97c-uxc900uxbe44}{%
+\section{미래를 준비}\label{uxbbf8uxb798uxb97c-uxc900uxbe44}}
+
+인간의 노동력을 기계가 대신한다는 암울한 미래가 있지만 인간이 도리어 기계를 몰아 낼수 있는 서로 보완적인 관계가 있음을 알아야 한다
+
+\begin{itemize}
+\tightlist
+\item
+  저숙련노동자(low-skilled workers)을 대신하는 자리에 높은 수준의 인간노동력이 대체 될수 있다
+\item
+  엑셀은 계산원의 자리를 위협했지만 분석능력이 요구되는 회계처리가나 경영컨설턴트 들과 같은 높은 수준의 노동자들을 신규 창출 했다고 할 수 있다
+\item
+  저숙련 노동자를 해고한 제조업체에서는 기계의 문제점을 진단하고, 유지하는 고급 기술자를 채용 할 필요가 대두 되었고 그러기 위해서는 이들에게 높은 수준의
+  임금을 제공 하여야 했다
+\end{itemize}
+
+우리 들은 기계의 변화에 대체되(substituted)지 않는 도리어 보완이 필요한 능력을 개발해야 한다
+
+\begin{itemize}
+\tightlist
+\item
+  고급기술이나 교육을 필요로 하는 분야에서 일을 할수있어야 한다. develop human capital 기술에 대체 되지 않고
+\item
+  권장되는 교육루트는 liberal art(논리적 사고를 기른다) 와 in science(수량적이고 기술적인 능력 함양을 위해) 의 복수 전공을 추천한다
+\item
+  여기서 경제학은 두 전공의 중간적인 위체에 있다고 할 수 있다. 인간과 조직의 역할을 설명하는 사회과학 분야이고 동시애 수학적 모델을 이용하여
+  이론을 설명하고 테스트 하기 때문이다
+\end{itemize}
+
+\hypertarget{uxacb0uxb860-1}{%
+\section{결론}\label{uxacb0uxb860-1}}
+
+최저임금은 몇가지 논쟁을 일으킨다
+
+\begin{itemize}
+\tightlist
+\item
+  저임금 노동자에게 높은 임금을 주기도하지만 그 들의 고용을 감소 시키기도 한다
+\item
+  높아진 최저임금은 생산비용을 증가하고 이는 회사가 물건을 만드는 것을 회피하거나 조업 중단을 일으 키기도 한다
+\item
+  결국 상대적으로 비싸진 노동자들을 대체하여 자동화를 가속화 시키는 유인을 기업주에게 제공한다
+\item
+  그러나 자동화는 때로 고급인력을 필요로 해서 기회를 주기도 한다
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 
