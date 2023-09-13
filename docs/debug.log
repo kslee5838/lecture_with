@@ -17,3 +17,9 @@
 [0909/212633:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
 [0909/212633:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
 [0909/212635:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0910/210522:ERROR:file_io.cc(30)] read: expected 4, observed 0
+[0910/210523:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0910/210532:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0910/210533:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0910/210540:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0910/210832:ERROR:registration_protocol_win.cc(53)] CreateFile: 지정된 경로를 찾을 수 없습니다. (0x3)
